@@ -98,12 +98,6 @@ export const Footer = () => {
           </div>
 
           <div>
-            <a href="/blog" className="opacity-60 hover:opacity-100">
-              Blog
-            </a>
-          </div>
-
-          <div>
             <a href="/career" className="opacity-60 hover:opacity-100">
               Career
             </a>
