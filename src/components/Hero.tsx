@@ -7,7 +7,7 @@ export const Hero = () => {
       <div className="text-center overflow-hidden lg:text-start space-y-6">
         <main className="text-5xl overflow-hidden md:text-6xl font-bold">
           <h1 className="inline">
-            <span className="inline bg-gradient-to-r from-[#61322e]  to-[#830303] text-transparent bg-clip-text">
+            <span className="inline bg-gradient-to-r from-[#dd5441]  to-[#e20707e0] text-transparent bg-clip-text">
               Welcome
             </span>{" "}
             to my
