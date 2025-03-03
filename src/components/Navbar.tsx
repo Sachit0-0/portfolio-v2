@@ -26,20 +26,20 @@ const mainRoutes: RouteProps[] = [
     href: "/",
     label: "Home",
   },
-  {
-    href: "/cv",
-    label: "CV",
-  },
+  // {
+  //   href: "/cv",
+  //   label: "CV",
+  // },
 
   {
     href: "/contact",
     label: "Contact",
   },
 
-  {
-    href: "/projects",
-    label: "Projects",
-  },
+  // {
+  //   href: "/projects",
+  //   label: "Projects",
+  // },
 ];
 
 export const Navbar = () => {
