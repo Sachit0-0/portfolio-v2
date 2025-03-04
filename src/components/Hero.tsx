@@ -20,7 +20,7 @@ export const Hero = () => {
           </h2>
         </main>
 
-        <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0 animation overflow-hidden shine">
+        <p className="text-xl font-light text-slate-600 md:w-10/12 mx-auto lg:mx-0">
           🚀 Developer | 💡 Tech Enthusiast
         </p>
 
@@ -39,3 +39,4 @@ export const Hero = () => {
     </section>
   );
 };
+

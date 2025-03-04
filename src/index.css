@@ -9,7 +9,7 @@ body {
 
 .shadow {
   position: absolute;
-  background: hsla(60, 100%, 50%, 0%);
+  background: hsla(0, 73%, 45%, 0.623);
   border-radius: 24px;
   rotate: 35deg;
 
@@ -17,17 +17,33 @@ body {
   top: 200px;
   height: 400px;
   filter: blur(150px);
-  animation: shadow-slide infinite 4s linear alternate;
+  animation: shadow-move infinite 8s ease-in-out alternate;
 }
 
-@keyframes shadow-slide {
-  from {
-    background: hsla(0, 97%, 45%, 0.623);
+@keyframes shadow-move {
+  0% {
     right: 460px;
+    transform: translateX(0);
   }
-  to {
-    background: hsl(0, 100%, 50%);
-    right: 160px;
+  20% {
+    right: 460px;
+    transform: translateX(-10px);
+  }
+  40% {
+    right: 360px;
+    transform: translateX(10px);
+  }
+  60% {
+    right: 360px;
+    transform: translateX(-10px);
+  }
+  80% {
+    right: 460px;
+    transform: translateX(10px);
+  }
+  100% {
+    right: 460px;
+    transform: translateX(0);
   }
 }
 

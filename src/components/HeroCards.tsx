@@ -61,14 +61,7 @@ export const HeroCards = () => {
           <p>Stay in Touch</p>
         </CardContent>
         <CardFooter className="flex justify-center items-center space-x-4 pt-4">
-          <a
-            href="https://github.com/Sachit0-0"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon-link"
-          >
-            <FaGithub className="icon" />
-          </a>
+        
           <a
             href="https://www.linkedin.com/in/sachit-dahal-59a05b212/"
             target="_blank"
@@ -100,6 +93,14 @@ export const HeroCards = () => {
             className="icon-link"
           >
             <FaEnvelope className="icon" />
+          </a>
+          <a
+            href="https://github.com/Sachit0-0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-link"
+          >
+            <FaGithub className="icon" />
           </a>
         </CardFooter>
       </Card>

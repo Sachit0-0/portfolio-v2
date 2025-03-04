@@ -1,5 +1,6 @@
 import { About } from "./components/About";
 import Features from "./components/Features";
+
 import { Hero } from "./components/Hero";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { Timeline } from "./components/ui/timeline";
