@@ -13,6 +13,7 @@ import backu from "@/assets/bgground.jpg";
 export const Timeline = () => {
   const darkerBackgroundColor = "rgb(18, 18, 18)";
   const whiteTextColor = "#fff";
+  const lightRed = "#ffccd5";
   const containerStyles = {
     backgroundImage: `url(${backu})`,
     backgroundSize: "fit",
@@ -33,7 +34,7 @@ export const Timeline = () => {
             date="Born on 2000 Oct 18"
             iconStyle={{
               background: darkerBackgroundColor,
-              color: whiteTextColor,
+              color: lightRed,
             }}
             contentStyle={{
               background: darkerBackgroundColor,
@@ -46,7 +47,7 @@ export const Timeline = () => {
           >
             <h3 className="vertical-timeline-element-title">Happy Birthday!</h3>
             <p style={{ color: whiteTextColor }}>
-              You were born on October 18, 2000.
+            Born on October 18, 2000.
             </p>
           </VerticalTimelineElement>
 
@@ -55,7 +56,7 @@ export const Timeline = () => {
             date="CHAITRA 2073"
             iconStyle={{
               background: darkerBackgroundColor,
-              color: whiteTextColor,
+              color: lightRed,
             }}
             contentStyle={{
               background: darkerBackgroundColor,
@@ -77,7 +78,7 @@ export const Timeline = () => {
             date="BAISAKH 2076"
             iconStyle={{
               background: darkerBackgroundColor,
-              color: whiteTextColor,
+              color: lightRed,
             }}
             contentStyle={{
               background: darkerBackgroundColor,
@@ -99,7 +100,7 @@ export const Timeline = () => {
             date="ASHADH 2080 B.S."
             iconStyle={{
               background: darkerBackgroundColor,
-              color: whiteTextColor,
+              color: lightRed,
             }}
             contentStyle={{
               background: darkerBackgroundColor,
@@ -125,7 +126,7 @@ export const Timeline = () => {
             date="Currently Working"
             iconStyle={{
               background: darkerBackgroundColor,
-              color: whiteTextColor,
+              color: lightRed,
             }}
             contentStyle={{
               background: darkerBackgroundColor,
@@ -138,7 +139,7 @@ export const Timeline = () => {
           >
             <h3 className="vertical-timeline-element-title">Monal Tech</h3>
             <p style={{ color: whiteTextColor }}>
-              Currently working as a junior developer at Monal Tech.
+             Working as an associate software developer at Monal Tech.
             </p>
           </VerticalTimelineElement>
 
@@ -157,7 +158,7 @@ export const Timeline = () => {
             date="Death: Pending"
             iconStyle={{
               background: darkerBackgroundColor,
-              color: whiteTextColor,
+              color: lightRed,
             }}
             contentStyle={{
               background: darkerBackgroundColor,
@@ -176,3 +177,4 @@ export const Timeline = () => {
     </section>
   );
 };
+

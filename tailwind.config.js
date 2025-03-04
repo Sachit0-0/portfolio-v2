@@ -22,7 +22,7 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))", 
+          DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -38,7 +38,7 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#6B407E", 
+          DEFAULT: "#6B407E",
           foreground: "#5CCFE6",
         },
         popover: {
@@ -50,7 +50,7 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         green: {
-          DEFAULT: "#6B407E", 
+          DEFAULT: "#6B407E",
         },
       },
       borderRadius: {
@@ -59,21 +59,17 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "accordion-down": {
-          from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
+        wiggle: {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(-5deg)" },
+          "50%": { transform: "rotate(5deg)" },
+          "75%": { transform: "rotate(-3deg)" },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        wiggle: "wiggle 0.5s ease-in-out",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 };
-

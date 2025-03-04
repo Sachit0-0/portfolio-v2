@@ -27,7 +27,7 @@ export const About = () => {
       <div
         data-aos="fade-up"
         data-aos-duration="2000"
-        data-aos-delay="500"
+        data-aos-delay="100"
         className="bg-muted/50 border rounded-lg py-12"
       >
         <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 px-6">
