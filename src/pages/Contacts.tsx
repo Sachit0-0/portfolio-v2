@@ -1,6 +1,6 @@
 import { useState } from "react";
 import contact from "@/assets/Contact us.gif";
-import { Button } from "@/components/ui/button";
+
 
 export const Contacts = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
