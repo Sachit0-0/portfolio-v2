@@ -1,119 +1,128 @@
+import { useState } from "react";
 import contact from "@/assets/Contact us.gif";
+import { Button } from "@/components/ui/button";
+
 export const Contacts = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState(""); // Status for success/error messages
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent default form submission
+
+    const formDataObj = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        body: formDataObj,
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 py-28">
-      <div className="md:flex md:items-center md:justify-between">
-        {/* Left Section */}
-        <div className="md:w-1/2 md:text-center md:mb-0 mb-8">
-          <img
-            src={contact}
-            alt="Profile"
-            className="mx-auto w-250 h-250 rounded-full"
-          />
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold text-secondary-800">
-              Contact Information
-            </h2>
-            <ul className="mt-2 text-secondary-600">
-              <li className="flex items-center mb-2">
-                <svg
-                  className="w-5 h-5 mr-2 text-secondary-700"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18v-6M12 8c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z" />
-                </svg>
-                sachitdahal33@gmail.com
+      <div className="flex flex-col gap-8">
+        {/* Contact Info */}
+        <div className="flex flex-col items-center">
+          <img src={contact} alt="Profile" className="w-68 h-68 rounded-full shadow-lg object-cover" />
+          <div className="mt-6 text-center">
+            <h2 className="text-3xl font-bold text-secondary-800">Contact Information</h2>
+            <ul className="mt-3 space-y-4 text-secondary-600">
+              <li className="flex items-center justify-center">
+                <span className="mr-2">📧</span><a href="mailto:sachitdahal33@gmail.com" className="hover:underline">sachitdahal33@gmail.com</a>
               </li>
-              <li className="flex items-center mb-2">
-                <svg
-                  className="w-5 h-5 mr-2 text-secondary-700"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18v-6M12 8c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z" />
-                </svg>
-                +977 9803033781
+              <li className="flex items-center justify-center">
+                <span className="mr-2">📞</span><a href="tel:+9779803033781" className="hover:underline">+977 9803033781</a>
               </li>
-              <li className="flex items-center">
-                <svg
-                  className="w-5 h-5 mr-2 text-secondary-700"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18v-6M12 8c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z" />
-                </svg>
-                Baluwatar, Kathmandu
+              <li className="flex items-center justify-center">
+                <span className="mr-2">📍</span>Pasikot, Kathmandu
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Right Section */}
-        <div className="md:w-1/2">
-          <hr className="my-6 md:hidden" />
-          <div className="bg-secondary-800 rounded-lg p-6">
-            <h2 className="text-2xl font-bold text-primary mb-4">Contact me</h2>
-            <p className="text-secondary-400 mb-4">
-              If you have any questions or inquiries, feel free to get in touch
-              using the contact form below:
+        {/* Contact Form */}
+        <div className="bg-secondary-800 p-8 rounded-lg">
+          <h2 className="text-3xl font-bold text-primary mb-6">Contact Me</h2>
+          <p className="text-secondary-400 mb-6">If you have any questions or inquiries, feel free to get in touch:</p>
+
+          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden>
+              <label>Don’t fill this out: <input name="bot-field" /></label>
             </p>
-            <form>
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-secondary-69">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="form-input mt-1 block w-full bg-secondary-700 text-secondary-200 border border-secondary-600 rounded-md py-2 px-4"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-secondary-69">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="form-input mt-1 block w-full bg-secondary-700 text-secondary-200 border border-secondary-600 rounded-md py-2 px-4"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="message" className="block text-secondary-69">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  className="form-textarea mt-1 block w-full bg-secondary-700 text-secondary-200 border border-secondary-600 rounded-md py-2 px-4"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="bg-secondary-900 text-white py-2 px-4 rounded-md hover:bg-secondary-700 transition duration-300"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
+
+            <div className="mb-6">
+              <label htmlFor="name" className="block text-secondary-69">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="form-input mt-2 block w-full bg-secondary-700 text-secondary-200 border border-secondary-600 rounded-md py-3 px-6"
+              />
+            </div>
+
+            <div className="mb-6">
+              <label htmlFor="email" className="block text-secondary-69">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className="form-input mt-2 block w-full bg-secondary-700 text-secondary-200 border border-secondary-600 rounded-md py-3 px-6"
+              />
+            </div>
+
+            <div className="mb-6">
+              <label htmlFor="message" className="block text-secondary-69">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                value={formData.message}
+                onChange={handleChange}
+                className="form-textarea mt-2 block w-full bg-secondary-700 text-secondary-200 border border-secondary-600 rounded-md py-3 px-6"
+              ></textarea>
+            </div>
+
+  
+            <div className="flex justify-center">
+            <button
+  type="submit"
+  className="bg-primary text-white py-2 px-4 rounded-md hover:bg-red-400 hover:shadow-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary-800"
+>
+  Submit
+</button>
+
+            </div>
+          </form>
+
+          {/* Status Messages */}
+          {status === "success" && (
+            <p className="text-green-500 mt-6">Message sent successfully!</p>
+          )}
+          {status === "error" && (
+            <p className="text-red-500 mt-6">Error sending message. Please try again.</p>
+          )}
         </div>
       </div>
     </div>

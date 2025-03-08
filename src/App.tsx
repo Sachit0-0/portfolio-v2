@@ -11,8 +11,9 @@ import { pageVariants } from "./transition";
 
 import "aos/dist/aos.css";
 import "./App.css";
-import { Contacts } from "./pages/Contacts";
+
 import { CV } from "./pages/CV";
+import Contacts from "./pages/Contacts";
 
 function AnimatedRoutes() {
   const location = useLocation();
