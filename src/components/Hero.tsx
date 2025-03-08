@@ -24,14 +24,13 @@ export const Hero = () => {
           🚀 Developer | 💡 Tech Enthusiast
         </p>
 
-        <Link to="/cv">
+        <Link to="/no">
           <button className="mt-20 button2"> Curriculum vitae</button>
         </Link>
       </div>
 
       <div className="z-10 overflow-hidden lg:overflow-visible">
         {" "}
-        {/* Apply overflow for large screens */}
         <HeroCards />
       </div>
 
