@@ -26,10 +26,10 @@ const mainRoutes: RouteProps[] = [
     href: "/",
     label: "Home",
   },
-  // {
-  //   href: "/cv",
-  //   label: "CV",
-  // },
+  {
+    href: "/cv",
+    label: "CV",
+  },
 
   {
     href: "/contact",

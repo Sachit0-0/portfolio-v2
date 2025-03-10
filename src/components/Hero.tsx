@@ -24,7 +24,7 @@ export const Hero = () => {
           🚀 Developer | 💡 Tech Enthusiast
         </p>
 
-        <Link to="/no">
+        <Link to="/CV">
           <button className="mt-20 button2"> Curriculum vitae</button>
         </Link>
       </div>
