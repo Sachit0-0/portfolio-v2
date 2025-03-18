@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import sachitlogo from "@/assets/Logo/sachit-logo.png";
+
 import logo from "@/assets/Logo/logo.png";
 import {
   NavigationMenu,
@@ -7,7 +7,7 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "./mode-toggle";
-import { useTheme } from "./theme-provider";
+
 import {
   Sheet,
   SheetContent,
@@ -46,7 +46,7 @@ const mainRoutes: RouteProps[] = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const { theme } = useTheme();
+  
 
   return (
     <header className="relative border-b-[1px] top-0 z-40 w-full font-mono bg-white dark:border-b-slate-700 dark:bg-background">
