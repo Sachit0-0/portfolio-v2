@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import sachitlogo from "@/assets/Logo/sachit-logo.png";
+import logo from "@/assets/Logo/logo.png";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -54,9 +55,9 @@ export const Navbar = () => {
           <NavigationMenuItem>
             <Link to="/" className="ml-2 font-bold text-xl flex items-center">
               <img
-                src={theme === "light" ? sachitlogo : sachitlogo}
+                src={logo}
                 alt="MonalTech"
-                width={190}
+                width={200}
               />
             </Link>
           </NavigationMenuItem>
