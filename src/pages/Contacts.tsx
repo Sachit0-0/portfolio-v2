@@ -4,14 +4,14 @@ import contact from "@/assets/Contact us.gif";
 
 export const Contacts = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState(""); // Status for success/error messages
+  const [status, setStatus] = useState(""); 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault();
 
     const formDataObj = new FormData(e.currentTarget);
 
@@ -55,7 +55,6 @@ export const Contacts = () => {
           </div>
         </div>
 
-        {/* Contact Form */}
         <div className="bg-secondary-800 p-8 rounded-lg">
           <h2 className="text-3xl font-bold text-primary mb-6">Contact Me</h2>
           <p className="text-secondary-400 mb-6">If you have any questions or inquiries, feel free to get in touch:</p>
@@ -116,7 +115,6 @@ export const Contacts = () => {
             </div>
           </form>
 
-          {/* Status Messages */}
           {status === "success" && (
             <p className="text-green-500 mt-6">Message sent successfully!</p>
           )}
