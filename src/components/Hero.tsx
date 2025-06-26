@@ -5,6 +5,7 @@ export const Hero = () => {
   return (
     <section className="container grid lg:grid-cols-2 place-items-center py-20 overflow-hidden md:py-32 gap-10">
       <div className="text-center overflow-hidden lg:text-start space-y-6">
+        
         <main className="text-5xl overflow-hidden md:text-6xl font-bold">
           <h1 className="inline">
             <span className="inline bg-gradient-to-r from-[#dd5441]  to-[#e20707e0] text-transparent bg-clip-text">
